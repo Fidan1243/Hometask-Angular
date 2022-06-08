@@ -1,0 +1,9 @@
+.bg-grey {
+  background-color: lightgray;
+}
+.bd-green {
+  border: 3px solid rgba(0, 128, 0, 0.493);
+}
+.bd-red {
+  border: 3px solid rgb(202, 0, 0);
+}

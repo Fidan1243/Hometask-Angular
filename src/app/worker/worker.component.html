@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 p-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Age</th>
+            <th scope="col">Hire Date</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of getItems(); let i = index">
+          <tr (click)="SetUpdate(indx, name, surname, age, datee, i)">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.Surname }}</td>
+            <td>{{ item.Age }}</td>
+            <td>{{ item.HireDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-5 p-5">
+      <input
+        #indx
+        type="number"
+        class="form-control mb-5"
+        [(ngModel)]="ind"
+        hidden
+      />
+      <input
+        #name
+        type="text"
+        class="form-control mb-5"
+        input.value=""
+        [(ngModel)]="namee"
+        [ngClass]="BorderColor(name)"
+        placeholder="Name"
+      />
+      <input
+        #surname
+        type="text"
+        class="form-control mb-5"
+        input.value=""
+        [(ngModel)]="surnamee"
+        [ngClass]="BorderColor(surname)"
+        placeholder="Surname"
+      />
+      <input
+        #age
+        type="number"
+        class="form-control mb-5"
+        input.value=""
+        [(ngModel)]="agee"
+        [ngClass]="BorderColor(age)"
+        placeholder="Age"
+      />
+      <input
+        #datee
+        type="date"
+        class="form-control mb-5"
+        input.value=""
+        [(ngModel)]="date"
+        [ngClass]="BorderColor(datee)"
+        placeholder="Date"
+      />
+
+      <button
+        class="btn btn-primary"
+        [ngClass]="SpecialClass()"
+        (click)="Add(indx, name, surname, age, datee)"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+</div>
