@@ -14,7 +14,6 @@ export class WorkerComponent implements OnInit {
   surnamee = '';
   agee;
   datee;
-  ind = 616161661616161616161661;
   constructor() {
     this.model.items = JSON.parse(localStorage.getItem('items'));
   }
@@ -22,7 +21,7 @@ export class WorkerComponent implements OnInit {
   getItems() {
     return this.model.items;
   }
-  Add(id: any, name: any, surname: any, age: any, date: any) {
+  Add(name: any, surname: any, age: any, date: any) {
     this.model.items.push(
       new Workerrr(
         this.model.items.length,
@@ -33,14 +32,6 @@ export class WorkerComponent implements OnInit {
       )
     );
     this.Set();
-  }
-  SetUpdate(id: any, name: any, surname: any, age: any, date: any, inde: any) {
-    this.ind = inde;
-    id.value = inde;
-    name.value = this.model.items[inde].Name;
-    surname.value = this.model.items[inde].Surname;
-    age.value = this.model.items[inde].Age;
-    date.value = this.model.items[inde].HireDate;
   }
   Set() {
     localStorage.setItem('items', JSON.stringify(this.model.items));

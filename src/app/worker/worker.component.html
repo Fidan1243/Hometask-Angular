@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody *ngFor="let item of getItems(); let i = index">
-          <tr (click)="SetUpdate(indx, name, surname, age, datee, i)">
+          <tr>
             <th scope="row">{{ i + 1 }}</th>
             <td>{{ item.Name }}</td>
             <td>{{ item.Surname }}</td>
@@ -24,13 +24,6 @@
     </div>
 
     <div class="col-5 p-5">
-      <input
-        #indx
-        type="number"
-        class="form-control mb-5"
-        [(ngModel)]="ind"
-        hidden
-      />
       <input
         #name
         type="text"
@@ -71,7 +64,7 @@
       <button
         class="btn btn-primary"
         [ngClass]="SpecialClass()"
-        (click)="Add(indx, name, surname, age, datee)"
+        (click)="Add(name, surname, age, datee)"
       >
         Add
       </button>
